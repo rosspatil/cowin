@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <H4>Vaccination slots are available at the following centers:</H4>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Age</th>
+            <th>Total</th>
+            <th>Dose 1</th>
+            <th>Dose 2</th>
+        </tr>
+        {{range $v := .Data}}
+        <tr>
+            <td>{{$v.Name}}</td>
+            <td>{{$v.Date}}</td>
+            <td>{{$v.Age}}</td>
+            <td>{{$v.Total}}</td>
+            <td>{{$v.Dose1}}</td>
+            <td>{{$v.Dose2}}</td>
+        </tr>
+        {{end}}
+    </table>
+
+</body>
+
+</html>
